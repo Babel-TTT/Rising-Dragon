@@ -1,0 +1,57 @@
+// Begin CA10
+
+spriteset (spriteset_ca10_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Truck", "ca10/ca10")
+}
+
+spriteset (spriteset_ca10_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Truck", "ca10/ca10")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ca10_decay, (cargo_classes == bitmask(CC_PASSENGERS)) || (cargo_type_in_veh == YETI) || (cargo_type_in_veh == YETY)) {
+    1: return 80;
+    return 185;
+}
+
+
+
+item (FEAT_ROADVEHS, ca10) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+
+        length:                         6;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_BULK, CC_PIECE_GOODS, CC_COVERED, CC_OVERSIZED, CC_LIQUID, CC_HAZARDOUS);
+        cargo_allow_refit:              [];
+        default_cargo_type:             GOOD;
+
+        name:                           string(STR_NAME_CA10);
+        introduction_date:              date(1956,7,13);
+        model_life:                     100;
+        retire_early:                   50;
+        vehicle_life:                   50;
+        reliability_decay:              12;
+
+        power:                          95 hp;
+        weight:                         3.9 ton;
+        tractive_effort_coefficient:    1;
+        speed:                          80 km/h;
+
+        cargo_capacity:                 8;
+        loading_speed:                  40;
+        cargo_age_period:               185 << param_cargo_decay;
+
+        cost_factor:                    120;
+        running_cost_factor:            80;
+    }
+    graphics {
+        default:                        spriteset_ca10_original;
+        purchase:                       spriteset_ca10_purchase;
+        cargo_age_period:                switch_ca10_decay() << param_cargo_decay ;
+    }
+}
+
+// End CA10

@@ -10,7 +10,7 @@
   "overlap": 0.05,
   "brightness": -0.025,
   "contrast": 0.025,
-  "pad_to_full_length": true,
+  "pad_to_full_length": false,
   "detail_boost": 15.0,
   "falloff_adjustment": 0.25,
   "joggle": 1,
@@ -18,9 +18,9 @@
   "max_colour_push": 2,
   "fosterise": true,
   "size": {
-    "x": 128,
-    "y": 50,
-    "z": 44
+    "x": 192,
+    "y": 40,
+    "z": 72
   },
   "render_elevation": 30,
   "sprites": [

@@ -3,5 +3,6 @@
 //No vehicles yet, so there is nothing to sort. Once vehicles exist, list them here, e.g.:
 //
 sort (FEAT_ROADVEHS, [
+    ca10,
     ztz96,
 ]);

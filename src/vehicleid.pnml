@@ -14,3 +14,4 @@ item (FEAT_ROADVEHS, ztz96, 1996) {}
 
 
 // Trucks
+item (FEAT_ROADVEHS, ca10, 4001) {}

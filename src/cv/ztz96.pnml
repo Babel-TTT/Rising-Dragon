@@ -46,7 +46,6 @@ item (FEAT_ROADVEHS, ztz96) {
     graphics {
         default:                        spriteset_ztz96_original;
         purchase:                       spriteset_ztz96_purchase;
-        length:                         8;
         cargo_capacity:                 0;
     }
 }

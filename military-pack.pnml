@@ -15,6 +15,7 @@
 #include "src/cv/ztz96.pnml"
 
 //Trucks
+#include "src/truck/ca10.pnml"
 
 
 
