@@ -1,23 +1,24 @@
 ##grflangid 0x01
 
-STR_GRF_NAME        :Military Pack {VERSION_STRING}
-STR_GRF_DESC        :Military vehicles for OpenTTD.
+STR_GRF_NAME        :制胜 {VERSION_STRING}
 STR_GRF_URL         :TBA
-STR_GRF_DESC_EXTRA  :Military trucks, jeeps and other support vehicles. More contents in the future.
-STR_GRF_DESC_README :See readme for details.
+STR_DESC            : 
 
-# string formatting
-STR_DESC_3                  :{STRING}{}{STRING}{}{STRING}
+# 参数（与 src/header.pnml 中的 param 块一起启用）
+STR_PARAM_PURCHASE_COST      :购买费用
+STR_PARAM_PURCHASE_COST_DESC :调整车辆购买费用。默认为 25%。
+STR_PARAM_RUNNING_COST       :运营费用
+STR_PARAM_RUNNING_COST_DESC  :调整车辆运营费用。默认为 25%。
+STR_PARAM_NUM                :{COMMA}%
+STR_PARAM_CARGO_DECAY          :货物贬值周期
+STR_PARAM_CARGO_DECAY_DESC  :调整车辆的货物贬值周期。“较长”为“标准”的两倍, “很长”是“较长”的两倍。即使在“标准”设置下, 货物贬值周期也随车辆种类而变化。
+STR_PARAM_STANDARD          :标准
+STR_PARAM_LONG              :较长
+STR_PARAM_VERY_LONG         :很长
 
-# parameters (uncomment together with the param blocks in src/header.pnml)
-# STR_PARAM_PURCHASE_COST      :Purchase costs
-# STR_PARAM_PURCHASE_COST_DESC :Adjust vehicle purchase costs. Default is 25%.
-# STR_PARAM_RUNNING_COST       :Running costs
-# STR_PARAM_RUNNING_COST_DESC  :Adjust vehicle running costs. Default is 25%.
-# STR_PARAM_NUM                :{COMMA}%
+# CV
+STR_NAME_ZTZ96              :ZTZ-96
 
-# Lists A to Z
-# (to be filled in once vehicles exist)
+# TR
+# （待加入车辆后填写）
 
-# Names A to Z
-# (to be filled in once vehicles exist)

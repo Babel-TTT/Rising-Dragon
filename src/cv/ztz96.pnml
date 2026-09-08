@@ -1,0 +1,54 @@
+// Begin ZTZ96
+
+spriteset (spriteset_ztz96_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("CV", "ztz96/ztz-96")
+}
+
+spriteset (spriteset_ztz96_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("CV", "ztz96/ztz-96")
+}
+
+
+
+
+item (FEAT_ROADVEHS, ztz96) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_ZTZ96);
+        introduction_date:              date(1997,1,1);
+        model_life:                     60;
+        retire_early:                   40;
+        vehicle_life:                   50;
+        reliability_decay:              16;
+
+        power:                          730 hp;
+        weight:                         41.5 ton;
+        tractive_effort_coefficient:    1;
+        speed:                          57 km/h;
+
+        cargo_capacity:                 1;
+        loading_speed:                  40;
+        cargo_age_period:               185 << param_cargo_decay;
+
+        cost_factor:                    120;
+        running_cost_factor:            80;
+    }
+    graphics {
+        default:                        spriteset_ztz96_original;
+        purchase:                       spriteset_ztz96_purchase;
+        length:                         8;
+        cargo_capacity:                 0;
+    }
+}
+
+// End ZTZ96

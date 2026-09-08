@@ -8,3 +8,9 @@
 //  item (FEAT_ROADVEHS, MyFirstVehicle, 1000) {}
 //
 //and then define that item in its own file (see the #include block in military-pack.pnml).
+
+// Combat Vehicles
+item (FEAT_ROADVEHS, ztz96, 1996) {}
+
+
+// Trucks

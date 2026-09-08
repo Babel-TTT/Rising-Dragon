@@ -1,16 +1,14 @@
 grf {
-    // TODO: replace this placeholder GRFID with your registered one before any public release.
-    //       The China-Set family uses the "\5F\5F\03\XX" range; an independent pack needs its own ID.
-    grfid:   "\4D\50\41\43";
+    grfid:   "\5F\5F\03\81";
     name:    string(STR_GRF_NAME);
-    desc:    string(STR_DESC_3, string(STR_GRF_DESC), string(STR_GRF_DESC_EXTRA), string(STR_GRF_DESC_README));
+    desc:    string(STR_DESC);
     url:     string(STR_GRF_URL);
     version: REPO_REVISION;
     min_compatible_version: 1;
 
     /* Optional newgrf parameters, mirroring China-Set-Buses.
        Uncomment and complete once vehicles exist and the matching
-       STR_PARAM_* strings have been added to lang/*.lng:
+       STR_PARAM_* strings have been added to lang/*.lng: */
 
     param 0 {
         param_purchase_cost {
@@ -54,19 +52,33 @@ grf {
             };
         }
     }
-    */
+   param 2 {
+        param_cargo_decay {
+            type: int;
+            name: string(STR_PARAM_CARGO_DECAY);
+            desc: string(STR_PARAM_CARGO_DECAY_DESC);
+            min_value: 0;
+            max_value: 2;
+            def_value: 0;
+            names: {
+                0: string(STR_PARAM_STANDARD);
+                1: string(STR_PARAM_LONG);
+                2: string(STR_PARAM_VERY_LONG);
+            };
+        }
+    }
 }
 
-/* Optional economy tweaks once vehicles exist (uncomment together with the params above):
+
 basecost {
     PR_BUILD_VEHICLE_ROAD: param_purchase_cost - 4;
     PR_RUNNING_ROADVEH: param_running_cost - 6;
  }
-*/
 
-/* Optional: disable original road vehicles once this set actually replaces/overrides them.
+
+
 disable_item(FEAT_ROADVEHS, 0, 6);
-*/
+
 
 /* only OpenTTD is supported, not enforced though */
 if (ttd_platform != PLATFORM_OPENTTD) {

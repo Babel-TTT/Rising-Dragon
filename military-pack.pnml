@@ -11,14 +11,12 @@
 // IDs
 #include "src/vehicleid.pnml"
 
-//Prerequisite Headers
-// Vehicle files are included here once they exist, one file per vehicle (or per variant group),
-// sorted alphabetically / by category, exactly like the src/ folders of China-Set-Buses, e.g.:
-//
-//   #include "src/trucks/SomeTruck.pnml"
-//   #include "src/jeeps/SomeJeep.pnml"
-//
-// (No vehicles yet — this GRF intentionally ships with the GRF header only.)
+//CVs
+#include "src/cv/ztz96.pnml"
+
+//Trucks
+
+
 
 // Sort Vehicles
 #include "src/vehiclesort.pnml"
