@@ -1,0 +1,12 @@
+// Shared sprite templates (spriteset layouts for the different vehicle views).
+//
+// China-Set-Buses keeps template_purchase_*/template_standard_* here, one template per
+// sprite-sheet layout, so every vehicle file only has to call the template it needs, e.g.
+//
+//   spriteset (spriteset_MyVehicle, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+//       template_purchase_32bpp ("Category", "MY_VEHICLE_WHITE")
+//   }
+//
+// No templates yet because this GRF has no vehicles/graphics. Add them here as soon as
+// the first vehicle sprites are set up, or delete this file and its #include in
+// military-pack.pnml if the set grows differently.

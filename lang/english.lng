@@ -1,0 +1,23 @@
+##grflangid 0x01
+
+STR_GRF_NAME        :Military Pack {VERSION_STRING}
+STR_GRF_DESC        :Military vehicles for OpenTTD.
+STR_GRF_URL         :TBA
+STR_GRF_DESC_EXTRA  :Military trucks, jeeps and other support vehicles. More contents in the future.
+STR_GRF_DESC_README :See readme for details.
+
+# string formatting
+STR_DESC_3                  :{STRING}{}{STRING}{}{STRING}
+
+# parameters (uncomment together with the param blocks in src/header.pnml)
+# STR_PARAM_PURCHASE_COST      :Purchase costs
+# STR_PARAM_PURCHASE_COST_DESC :Adjust vehicle purchase costs. Default is 25%.
+# STR_PARAM_RUNNING_COST       :Running costs
+# STR_PARAM_RUNNING_COST_DESC  :Adjust vehicle running costs. Default is 25%.
+# STR_PARAM_NUM                :{COMMA}%
+
+# Lists A to Z
+# (to be filled in once vehicles exist)
+
+# Names A to Z
+# (to be filled in once vehicles exist)

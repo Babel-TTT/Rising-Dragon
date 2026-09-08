@@ -1,0 +1,81 @@
+grf {
+    // TODO: replace this placeholder GRFID with your registered one before any public release.
+    //       The China-Set family uses the "\5F\5F\03\XX" range; an independent pack needs its own ID.
+    grfid:   "\4D\50\41\43";
+    name:    string(STR_GRF_NAME);
+    desc:    string(STR_DESC_3, string(STR_GRF_DESC), string(STR_GRF_DESC_EXTRA), string(STR_GRF_DESC_README));
+    url:     string(STR_GRF_URL);
+    version: REPO_REVISION;
+    min_compatible_version: 1;
+
+    /* Optional newgrf parameters, mirroring China-Set-Buses.
+       Uncomment and complete once vehicles exist and the matching
+       STR_PARAM_* strings have been added to lang/*.lng:
+
+    param 0 {
+        param_purchase_cost {
+            type: int;
+            name: string(STR_PARAM_PURCHASE_COST);
+            desc: string(STR_PARAM_PURCHASE_COST_DESC);
+            min_value: 0;
+            max_value: 8;
+            def_value: 4;
+            names: {
+                0: string(STR_PARAM_NUM, 6);
+                1: string(STR_PARAM_NUM, 12);
+                2: string(STR_PARAM_NUM, 25);
+                3: string(STR_PARAM_NUM, 50);
+                4: string(STR_PARAM_NUM, 100);
+                5: string(STR_PARAM_NUM, 200);
+                6: string(STR_PARAM_NUM, 400);
+                7: string(STR_PARAM_NUM, 800);
+                8: string(STR_PARAM_NUM, 1600);
+            };
+        }
+    }
+    param 1 {
+        param_running_cost {
+            type: int;
+            name: string(STR_PARAM_RUNNING_COST);
+            desc: string(STR_PARAM_RUNNING_COST_DESC);
+            min_value: 0;
+            max_value: 8;
+            def_value: 4;
+            names: {
+                0: string(STR_PARAM_NUM, 6);
+                1: string(STR_PARAM_NUM, 12);
+                2: string(STR_PARAM_NUM, 25);
+                3: string(STR_PARAM_NUM, 50);
+                4: string(STR_PARAM_NUM, 100);
+                5: string(STR_PARAM_NUM, 200);
+                6: string(STR_PARAM_NUM, 400);
+                7: string(STR_PARAM_NUM, 800);
+                8: string(STR_PARAM_NUM, 1600);
+            };
+        }
+    }
+    */
+}
+
+/* Optional economy tweaks once vehicles exist (uncomment together with the params above):
+basecost {
+    PR_BUILD_VEHICLE_ROAD: param_purchase_cost - 4;
+    PR_RUNNING_ROADVEH: param_running_cost - 6;
+ }
+*/
+
+/* Optional: disable original road vehicles once this set actually replaces/overrides them.
+disable_item(FEAT_ROADVEHS, 0, 6);
+*/
+
+/* only OpenTTD is supported, not enforced though */
+if (ttd_platform != PLATFORM_OPENTTD) {
+    //requires OpenTTD
+    error(FATAL, USED_WITH, "OpenTTD");
+}
+else {
+    if (openttd_version < version_openttd(1, 4, 0, 26157)) {
+        //requires OpenTTD 1.4.0-beta1 or later
+        error(FATAL, REQUIRES_OPENTTD, "1.4.0-beta1 / r26157");
+    }
+}

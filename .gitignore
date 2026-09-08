@@ -1,0 +1,11 @@
+.nmlcache
+.vscode
+*.grf
+*.nml
+*.tar
+~$*
+military-pack-*
+custom_tags.txt
+gfx/**/*.png
+!gfx/empty.png
+!gfx/empty_32bpp.png

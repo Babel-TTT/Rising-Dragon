@@ -1,0 +1,8 @@
+/* Begin Functions */
+
+// Shared switches / helper callbacks that several vehicles use go here, mirroring
+// China-Set-Buses (e.g. its running-cost factor switch and articulated length switches).
+//
+// No shared functions yet because this GRF has no vehicles. Add them here once vehicle
+// files start to reference a common helper, or delete this file and its #include in
+// military-pack.pnml if the set grows differently.

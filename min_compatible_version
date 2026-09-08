@@ -1,0 +1,3 @@
+# The MIN_COMPATIBLE_VERSION macro used by the Makefile is derived from this file.
+# It should contain a commit hash or a tag of the oldest release this GRF stays
+# compatible with. Leave empty until the first release exists.
