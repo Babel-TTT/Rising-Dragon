@@ -10,6 +10,7 @@
 //and then define that item in its own file (see the #include block in military-pack.pnml).
 
 // Combat Vehicles
+item (FEAT_ROADVEHS, zsd63, 1963) {}
 item (FEAT_ROADVEHS, ztz96, 1996) {}
 
 

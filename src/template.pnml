@@ -119,6 +119,42 @@ template template_standard__2 (a, b) {
     [868,   0, 116,  109, -14, -48, "gfx/"+a+"/"+b+"_32bpp.png"]
 }
 
+/* ------------------------------------------------------------------ */
+/* CV templates (tanks & armoured vehicles)                             */
+/*                                                                      */
+/* Rendered with the cv manifests (pad_to_full_length + tightened size, */
+/* so the model fills/centres the frame differently from the buses).    */
+/* Frames 0/4 (front/rear) are widened to 56px in the cv manifest, so   */
+/* every later frame shifts +16px on the sheet (1024px wide PNG):       */
+/* frame x origins are 0/64/188/388/512/576/700/900.                    */
+/* Offsets are calibrated so content bottom edges sit at the same       */
+/* ground line as the standard_0 bus template, and content centres      */
+/* match the bus anchor positions. Tweak in-game if needed.             */
+/* ------------------------------------------------------------------ */
+
+template template_cv_purchase_32bpp (a, b) {
+    // a: vehicle type (all lower cases), b: vehicle name (all lower cases)
+    []
+    []
+    []
+    []
+    []
+    []
+    [700,   0, 192,   80, -126, -48, "gfx/"+a+"/"+b+"_32bpp.png"]
+    []
+}
+
+template template_cv_standard_0 (a, b) {
+    [  0,   0,  56,  160, -20, -83, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [ 64,   0, 116,  109, -60, -59, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [188,   0, 192,   80, -88, -62, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [388,   0, 116,  109, -41, -56, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [512,   0,  56,  160, -20, -67, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [576,   0, 116,  109, -78, -50, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [700,   0, 192,   80, -72, -62, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [900,   0, 116,  109, -49, -65, "gfx/"+a+"/"+b+"_32bpp.png"]
+}
+
 spriteset (empty_sprites, "gfx/empty.png") {
   [0, 0, 2, 2, 0, 0, CROP]
 }

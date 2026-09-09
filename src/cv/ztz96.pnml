@@ -1,11 +1,11 @@
 // Begin ZTZ96
 
 spriteset (spriteset_ztz96_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_purchase_32bpp ("CV", "ztz96/ztz-96")
+    template_cv_purchase_32bpp ("cv", "ztz96/ztz-96")
 }
 
 spriteset (spriteset_ztz96_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_0 ("CV", "ztz96/ztz-96")
+    template_cv_standard_0 ("cv", "ztz96/ztz-96")
 }
 
 

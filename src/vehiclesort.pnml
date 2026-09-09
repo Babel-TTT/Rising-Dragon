@@ -4,5 +4,6 @@
 //
 sort (FEAT_ROADVEHS, [
     ca10,
+    zsd63,
     ztz96,
 ]);

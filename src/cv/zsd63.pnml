@@ -1,0 +1,58 @@
+// Begin ZSD63
+
+spriteset (spriteset_zsd63_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_cv_purchase_32bpp ("cv", "zsd63/zsd-63")
+}
+
+spriteset (spriteset_zsd63_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_cv_standard_0 ("cv", "zsd63/zsd-63")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_zsd63_decay, (cargo_classes == bitmask(CC_PASSENGERS)) || (cargo_type_in_veh == YETI) || (cargo_type_in_veh == YETY)) {
+    1: return 80;
+    return 185;
+}
+
+
+
+item (FEAT_ROADVEHS, zsd63) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_PIECE_GOODS);
+        non_refittable_cargo_classes:   bitmask( CC_BULK, CC_PIECE_GOODS, CC_COVERED, CC_OVERSIZED, CC_LIQUID, CC_HAZARDOUS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_ZSD63);
+        introduction_date:              date(1997,1,1);
+        model_life:                     60;
+        retire_early:                   30;
+        vehicle_life:                   50;
+        reliability_decay:              16;
+
+        power:                          260 hp;
+        weight:                         12.6 ton;
+        tractive_effort_coefficient:    1;
+        speed:                          60 km/h;
+
+        cargo_capacity:                 11;
+        loading_speed:                  40;
+        cargo_age_period:               185 << param_cargo_decay;
+
+        cost_factor:                    60;
+        running_cost_factor:            25;
+    }
+    graphics {
+        default:                        spriteset_zsd63_original;
+        purchase:                       spriteset_zsd63_purchase;
+        cargo_age_period:               switch_zsd63_decay;
+    }
+}
+
+// End ZSD63
