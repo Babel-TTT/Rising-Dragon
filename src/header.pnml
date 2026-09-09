@@ -71,13 +71,17 @@ grf {
 
 
 basecost {
-    PR_BUILD_VEHICLE_ROAD: param_purchase_cost - 4;
-    PR_RUNNING_ROADVEH: param_running_cost - 6;
+    PR_BUILD_VEHICLE_ROAD: param_purchase_cost - 1;
+    PR_RUNNING_ROADVEH: param_running_cost - 3;
  }
 
 
 
 disable_item(FEAT_ROADVEHS, 0, 6);
+
+
+
+
 
 
 /* only OpenTTD is supported, not enforced though */

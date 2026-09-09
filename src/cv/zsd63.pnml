@@ -13,7 +13,7 @@ switch (FEAT_ROADVEHS, SELF, switch_zsd63_decay, (cargo_classes == bitmask(CC_PA
     return 185;
 }
 
-
+if ((grf_future_status("\5F\5F\03\00") && grf_future_status("\5F\5F\03\02") && grf_future_status("\5F\5F\03\05") && grf_future_status("\5F\5F\03\03")) != 0 ) {
 
 item (FEAT_ROADVEHS, zsd63) {
     property {
@@ -30,7 +30,7 @@ item (FEAT_ROADVEHS, zsd63) {
         default_cargo_type:             PASS;
 
         name:                           string(STR_NAME_ZSD63);
-        introduction_date:              date(1997,1,1);
+        introduction_date:              date(1963,1,1);
         model_life:                     60;
         retire_early:                   30;
         vehicle_life:                   50;
@@ -53,6 +53,10 @@ item (FEAT_ROADVEHS, zsd63) {
         purchase:                       spriteset_zsd63_purchase;
         cargo_age_period:               switch_zsd63_decay;
     }
+}
+
+} else {
+    item (FEAT_ROADVEHS, zsd63) {}
 }
 
 // End ZSD63

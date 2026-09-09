@@ -1,13 +1,4 @@
-//This file sets all vehicle IDs. Each type has a range of 32/64/128/256/512/768/1024 possible IDs.
-//Mirror of China-Set-Buses: every vehicle gets one item slot reserved here so that the
-//in-game vehicle IDs stay stable across releases, independent of source-file order.
-//
-//No vehicles yet — as soon as the first vehicle exists, reserve a block like:
-//
-//  //某类单机（1000-1999）
-//  item (FEAT_ROADVEHS, MyFirstVehicle, 1000) {}
-//
-//and then define that item in its own file (see the #include block in military-pack.pnml).
+
 
 // Combat Vehicles
 item (FEAT_ROADVEHS, zsd63, 1963) {}
@@ -16,3 +7,4 @@ item (FEAT_ROADVEHS, ztz96, 1996) {}
 
 // Trucks
 item (FEAT_ROADVEHS, ca10, 4001) {}
+item (FEAT_ROADVEHS, sx250, 4002) {}

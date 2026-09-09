@@ -1,0 +1,57 @@
+// Begin SX250
+
+spriteset (spriteset_sx250_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Truck", "sx250/sx250")
+}
+
+spriteset (spriteset_sx250_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Truck", "sx250/sx250")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_sx250_decay, (cargo_classes == bitmask(CC_PASSENGERS)) || (cargo_type_in_veh == YETI) || (cargo_type_in_veh == YETY)) {
+    1: return 80;
+    return 185;
+}
+
+
+
+item (FEAT_ROADVEHS, sx250) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_BULK, CC_PIECE_GOODS, CC_COVERED, CC_OVERSIZED, CC_LIQUID, CC_HAZARDOUS); 
+        cargo_allow_refit:              [];
+        default_cargo_type:             GOOD;
+
+        name:                           string(STR_NAME_SX250);
+        introduction_date:              date(1974,12,16);
+        model_life:                     100;
+        retire_early:                   0;
+        vehicle_life:                   50;
+        reliability_decay:              12;
+
+        power:                          113 hp;
+        weight:                         9.4 ton;
+        tractive_effort_coefficient:    0.8;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 15;
+        loading_speed:                  40;
+        cargo_age_period:               185 << param_cargo_decay;
+
+        cost_factor:                    60;
+        running_cost_factor:            15;
+    }
+    graphics {
+        default:                        spriteset_sx250_original;
+        purchase:                       spriteset_sx250_purchase;
+        cargo_age_period:               switch_sx250_decay() << param_cargo_decay ;
+    }
+}
+
+// End SX250

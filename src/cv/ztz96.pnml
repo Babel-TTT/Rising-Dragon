@@ -10,6 +10,7 @@ spriteset (spriteset_ztz96_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
 
 
 
+if ((grf_future_status("\5F\5F\03\00") && grf_future_status("\5F\5F\03\02") && grf_future_status("\5F\5F\03\05") && grf_future_status("\5F\5F\03\03")) != 0 ) {
 
 item (FEAT_ROADVEHS, ztz96) {
     property {
@@ -48,6 +49,9 @@ item (FEAT_ROADVEHS, ztz96) {
         purchase:                       spriteset_ztz96_purchase;
         cargo_capacity:                 0;
     }
+}
+} else {
+    item (FEAT_ROADVEHS, ztz96) {}
 }
 
 // End ZTZ96

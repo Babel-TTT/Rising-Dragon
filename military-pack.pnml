@@ -17,6 +17,7 @@
 
 //Trucks
 #include "src/truck/ca10.pnml"
+#include "src/truck/sx250.pnml"
 
 
 
