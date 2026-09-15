@@ -17,6 +17,8 @@ switch (FEAT_ROADVEHS, SELF, switch_sx2306_cargo_graphics, position_in_articulat
     0: spriteset_sx2306_original;
     1: empty_sprites;
 }
+
+
 switch (FEAT_ROADVEHS, SELF, switch_sx2306_decay, (cargo_classes == bitmask(CC_PASSENGERS)) || (cargo_type_in_veh == YETI) || (cargo_type_in_veh == YETY)) {
     1: return 80;
     return 185;
@@ -49,7 +51,7 @@ item (FEAT_ROADVEHS, sx2306) {
         tractive_effort_coefficient:    0.8;
         speed:                          100 km/h;
 
-        cargo_capacity:                 40;
+        cargo_capacity:                 20;//40/2
         loading_speed:                  40;
         cargo_age_period:               185 << param_cargo_decay;
 
