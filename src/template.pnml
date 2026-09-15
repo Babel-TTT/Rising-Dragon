@@ -145,6 +145,16 @@ template template_cv_purchase_32bpp (a, b) {
 }
 
 template template_cv_standard_0 (a, b) {
+    [  0,   0,  56,  160, -20, -67, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [ 64,   0, 116,  109, -76, -51, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [188,   0, 192,   80, -120, -62, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [388,   0, 116,  109, -59, -64, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [512,   0,  56,  160, -20, -83, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [576,   0, 116,  109, -70, -58, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [700,   0, 192,   80, -40, -62, "gfx/"+a+"/"+b+"_32bpp.png"]
+    [900,   0, 116,  109, -33, -57, "gfx/"+a+"/"+b+"_32bpp.png"]
+}
+template template_cv_standard_4 (a, b) {
     [  0,   0,  56,  160, -20, -83, "gfx/"+a+"/"+b+"_32bpp.png"]
     [ 64,   0, 116,  109, -60, -59, "gfx/"+a+"/"+b+"_32bpp.png"]
     [188,   0, 192,   80, -88, -62, "gfx/"+a+"/"+b+"_32bpp.png"]

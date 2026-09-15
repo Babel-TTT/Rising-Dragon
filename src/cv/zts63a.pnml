@@ -1,26 +1,26 @@
-// Begin ZTZ96
+// Begin ZTS63A
 
-spriteset (spriteset_ztz96_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_cv_purchase_32bpp ("cv", "ztz96/ztz-96")
+spriteset (spriteset_zts63a_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_cv_purchase_32bpp ("cv", "zts63a/zts-63a")
 }
 
-spriteset (spriteset_ztz96_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_cv_standard_4 ("cv", "ztz96/ztz-96")
+spriteset (spriteset_zts63a_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_cv_standard_4 ("cv", "zts63a/zts-63a")
 }
 
-switch (FEAT_ROADVEHS, SELF, switch_ztz96_articulated_part, extra_callback_info1) {
-    1 : return ztz96;
+switch (FEAT_ROADVEHS, SELF, switch_zts63a_articulated_part, extra_callback_info1) {
+    1 : return zts63a;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch (FEAT_ROADVEHS, SELF, switch_ztz96_cargo_graphics, position_in_articulated_veh) {
-    1: spriteset_ztz96_original;
+switch (FEAT_ROADVEHS, SELF, switch_zts63a_cargo_graphics, position_in_articulated_veh) {
+    1: spriteset_zts63a_original;
     empty_sprites;
 }
 
 
 if ((grf_future_status("\5F\5F\03\00") && grf_future_status("\5F\5F\03\02") && grf_future_status("\5F\5F\03\05") && grf_future_status("\5F\5F\03\03")) != 0 ) {
 
-item (FEAT_ROADVEHS, ztz96) {
+item (FEAT_ROADVEHS, zts63a) {
     property {
         sprite_id:                      SPRITE_ID_NEW_ROADVEH;
         climates_available:             ALL_CLIMATES;
@@ -33,15 +33,15 @@ item (FEAT_ROADVEHS, ztz96) {
         cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
         default_cargo_type:             PASS;
 
-        name:                           string(STR_NAME_ZTZ96);
-        introduction_date:              date(1997,1,1);
+        name:                           string(STR_NAME_ZTS63A);
+        introduction_date:              date(1998,3,1);
         model_life:                     60;
         retire_early:                   40;
         vehicle_life:                   50;
         reliability_decay:              16;
 
-        power:                          730 hp;
-        weight:                         41.5 ton;
+        power:                          520 hp;
+        weight:                         20 ton;
         tractive_effort_coefficient:    1;
         speed:                          57 km/h;
 
@@ -49,19 +49,19 @@ item (FEAT_ROADVEHS, ztz96) {
         loading_speed:                  40;
         cargo_age_period:               185 << param_cargo_decay;
 
-        cost_factor:                    120;
-        running_cost_factor:            80;
+        cost_factor:                    95;
+        running_cost_factor:            60;
     }
     graphics {
-        articulated_part:               switch_ztz96_articulated_part;
+        articulated_part:               switch_zts63a_articulated_part;
         length:                         switch_cv_length_12;
-        default:                        switch_ztz96_cargo_graphics;
-        purchase:                       spriteset_ztz96_purchase;
+        default:                        switch_zts63a_cargo_graphics;
+        purchase:                       spriteset_zts63a_purchase;
         cargo_capacity:                 0;
     }
 }
 } else {
-    item (FEAT_ROADVEHS, ztz96) {}
+    item (FEAT_ROADVEHS, zts63a) {}
 }
 
-// End ZTZ96
+// End ZTS63A

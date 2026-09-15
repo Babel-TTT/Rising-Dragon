@@ -13,12 +13,13 @@
 
 //CVs
 #include "src/cv/zsd63.pnml"
+#include "src/cv/zts63a.pnml"
 #include "src/cv/ztz96.pnml"
 
 //Trucks
 #include "src/truck/ca10.pnml"
 #include "src/truck/sx250.pnml"
-
+#include "src/truck/sx2306.pnml"
 
 
 // Sort Vehicles

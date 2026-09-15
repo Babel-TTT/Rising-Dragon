@@ -1,0 +1,68 @@
+// Begin SX2306
+
+spriteset (spriteset_sx2306_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Truck", "sx2306/sx2306")
+}
+
+spriteset (spriteset_sx2306_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Truck", "sx2306/sx2306")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_sx2306_articulated_part, extra_callback_info1) {
+    1 : return sx2306;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_sx2306_cargo_graphics, position_in_articulated_veh) {
+    0: spriteset_sx2306_original;
+    1: empty_sprites;
+}
+switch (FEAT_ROADVEHS, SELF, switch_sx2306_decay, (cargo_classes == bitmask(CC_PASSENGERS)) || (cargo_type_in_veh == YETI) || (cargo_type_in_veh == YETY)) {
+    1: return 80;
+    return 185;
+}
+
+
+
+item (FEAT_ROADVEHS, sx2306) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_BULK, CC_PIECE_GOODS, CC_COVERED, CC_OVERSIZED, CC_LIQUID, CC_HAZARDOUS); 
+        cargo_allow_refit:              [];
+        default_cargo_type:             GOOD;
+
+        name:                           string(STR_NAME_SX2306);
+        introduction_date:              date(2019,1,1);
+        model_life:                     100;
+        retire_early:                   0;
+        vehicle_life:                   50;
+        reliability_decay:              12;
+
+        power:                          400 hp;
+        weight:                         30 ton;
+        tractive_effort_coefficient:    0.8;
+        speed:                          100 km/h;
+
+        cargo_capacity:                 40;
+        loading_speed:                  40;
+        cargo_age_period:               185 << param_cargo_decay;
+
+        cost_factor:                    120;
+        running_cost_factor:            30;
+    }
+    graphics {
+        articulated_part:               switch_sx2306_articulated_part;
+        length:                         switch_8_2_length_10;
+        default:                        switch_sx2306_cargo_graphics;
+        purchase:                       spriteset_sx2306_purchase;
+        cargo_age_period:               switch_sx2306_decay() << param_cargo_decay ;
+    }
+}
+
+// End SX2306

@@ -1,6 +1,6 @@
 ##grflangid 0x01
 
-STR_GRF_NAME        :Eight-one {VERSION_STRING}
+STR_GRF_NAME        :Rigsing Dragon {VERSION_STRING}
 STR_GRF_URL         :TBA
 STR_DESC            : 
 
@@ -19,8 +19,10 @@ STR_PARAM_VERY_LONG         :很长
 # CV
 STR_NAME_ZTZ96              :ZTZ-96
 STR_NAME_ZSD63              :ZSD-63
+STR_NAME_ZTS63A             :ZTS-63A
 
 # TR
 STR_NAME_CA10               :解放 CA-10
 STR_NAME_SX250              :延安 SX250
+STR_NAME_SX2306             :陕汽 SX250
 

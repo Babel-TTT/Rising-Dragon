@@ -2,9 +2,11 @@
 
 // Combat Vehicles
 item (FEAT_ROADVEHS, zsd63, 1963) {}
+item (FEAT_ROADVEHS, zts63a, 1998) {}
 item (FEAT_ROADVEHS, ztz96, 1996) {}
 
 
 // Trucks
 item (FEAT_ROADVEHS, ca10, 4001) {}
 item (FEAT_ROADVEHS, sx250, 4002) {}
+item (FEAT_ROADVEHS, sx2306, 4003) {}

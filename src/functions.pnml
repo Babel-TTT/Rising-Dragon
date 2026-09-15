@@ -48,3 +48,19 @@ switch (FEAT_ROADVEHS, SELF, switch_8_8_length_16, position_in_articulated_veh) 
     1: return 8;
     return 8;
 }
+
+
+
+
+switch (FEAT_ROADVEHS, SELF, switch_cv_length_10, position_in_articulated_veh) {
+    0: return 2;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, switch_cv_length_12, position_in_articulated_veh) {
+    0: return 4;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, switch_cv_length_16, position_in_articulated_veh) {
+    1: return 8;
+    return 4;
+}
