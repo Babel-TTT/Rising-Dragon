@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 STR_GRF_NAME        :Rising Dragon {VERSION_STRING}
-STR_GRF_URL         :TBA
+STR_GRF_URL         :https://github.com/Babel-TTT/Rising-Dragon
 STR_DESC            : 
 
 # 参数（与 src/header.pnml 中的 param 块一起启用）
