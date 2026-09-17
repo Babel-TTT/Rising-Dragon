@@ -7,6 +7,7 @@ sort (FEAT_ROADVEHS, [
     sx250,
     sx2306,
     zsd63,
+    t3485,
     zts63a,
     ztz96,
 ]);

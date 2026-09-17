@@ -1,0 +1,66 @@
+// Begin T-34-85
+spriteset (spriteset_t3485_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_cv_purchase_32bpp ("cv", "t3485/t-34-85")
+}
+
+spriteset (spriteset_t3485_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_cv_standard_4 ("cv", "t3485/t-34-85")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_t3485_articulated_part, extra_callback_info1) {
+    1 : return t3485;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, switch_t3485_cargo_graphics, position_in_articulated_veh) {
+    1: spriteset_t3485_original;
+    empty_sprites;
+}
+
+
+if ((grf_future_status("\5F\5F\03\00") && grf_future_status("\5F\5F\03\02") && grf_future_status("\5F\5F\03\05") && grf_future_status("\5F\5F\03\03")) != 0 ) {
+
+item (FEAT_ROADVEHS, t3485) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_T3485);
+        introduction_date:              date(1950,1,1);
+        model_life:                     60;
+        retire_early:                   40;
+        vehicle_life:                   50;
+        reliability_decay:              16;
+
+        power:                          500 hp;
+        weight:                         32 ton;
+        tractive_effort_coefficient:    1;
+        speed:                          38 km/h;
+
+        cargo_capacity:                 1;
+        loading_speed:                  40;
+        cargo_age_period:               185 << param_cargo_decay;
+
+        cost_factor:                    46;
+        running_cost_factor:            40;
+    }
+    graphics {
+        articulated_part:               switch_t3485_articulated_part;
+        length:                         switch_cv_length_12;
+        default:                        switch_t3485_cargo_graphics;
+        purchase:                       spriteset_t3485_purchase;
+        cargo_capacity:                 0;
+    }
+}
+} else {
+    item (FEAT_ROADVEHS, t3485) {}
+}
+
+// End T-34-85

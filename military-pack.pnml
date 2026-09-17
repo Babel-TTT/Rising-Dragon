@@ -12,6 +12,7 @@
 #include "src/vehicleid.pnml"
 
 //CVs
+#include "src/cv/t3485.pnml"
 #include "src/cv/zsd63.pnml"
 #include "src/cv/zts63a.pnml"
 #include "src/cv/ztz96.pnml"

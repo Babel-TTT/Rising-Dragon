@@ -1,6 +1,7 @@
 
 
 // Combat Vehicles
+item (FEAT_ROADVEHS, t3485, 1944) {}
 item (FEAT_ROADVEHS, zsd63, 1963) {}
 item (FEAT_ROADVEHS, zts63a, 1998) {}
 item (FEAT_ROADVEHS, ztz96, 1996) {}
